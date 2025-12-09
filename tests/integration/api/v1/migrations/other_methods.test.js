@@ -1,3 +1,9 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
+
 const methods = ["PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"];
 
 test("Methods different than GET and POST should return 405", async () => {
